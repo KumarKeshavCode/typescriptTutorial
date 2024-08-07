@@ -52,6 +52,10 @@ console.log(user.id);
 */
 
 
+
+
+
+/*
 function logExecutionTime(target : any ,propertyName: string , descriptor:PropertyDescriptor){
     let originalMethod = descriptor.value;
     descriptor.value = function(...args: any[]){
@@ -76,3 +80,12 @@ let total = calculator.add(4,3);
 
 
 console.log(total);
+
+*/
+
+
+//    LOGGER 
+
+
+
+
