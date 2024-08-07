@@ -191,7 +191,7 @@ finally{
 
 */
 // own exception handling
-
+/*
 class ValidateError extends Error{
     constructor(message: string){
         super(message);
@@ -215,3 +215,11 @@ catch(error :any){
         console.log(error.message);
     }
 }
+
+
+*/
+///
+
+import {logger}  from "./Logger/logger";
+logger.info("Thos is info msg");
+logger.error("Thos is error msg");

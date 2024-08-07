@@ -84,7 +84,23 @@ console.log(total);
 */
 
 
-//    LOGGER 
+
+
+  /*
+  [11:50] Nagendra (Bridgelabz) (Unverified)
+Class Decorator:
+ 
+target is the constructor function of the class.
+ 
+
+
+Method Decorator:
+ 
+target is the prototype of the class for instance methods or the constructor function for static methods.
+ */
+
+
+//                  LOGGER 
 
 
 

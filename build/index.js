@@ -1,5 +1,6 @@
 "use strict";
 // export function hello(name: string) :string {
+Object.defineProperty(exports, "__esModule", { value: true });
 //     return 'hello' + name;
 // }
 // let lastName :string ="Kumar";
@@ -177,22 +178,34 @@ finally{
 
 */
 // own exception handling
-class ValidateError extends Error {
-    constructor(message) {
+/*
+class ValidateError extends Error{
+    constructor(message: string){
         super(message);
         this.name = "ValidateError";
     }
 }
-function validateInput(input) {
-    if (input == "") {
+
+
+function validateInput(input :string)
+{
+    if(input==""){
         throw new ValidateError("Input is emplty");
     }
 }
-try {
+
+try{
     validateInput("");
 }
-catch (error) {
-    if (error instanceof ValidateError) {
+catch(error :any){
+    if(error instanceof ValidateError){
         console.log(error.message);
     }
 }
+
+
+*/
+///
+const logger_1 = require("./Logger/logger");
+logger_1.logger.info("Thos is info msg");
+logger_1.logger.error("Thos is error msg");

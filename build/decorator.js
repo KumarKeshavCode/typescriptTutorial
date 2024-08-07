@@ -32,12 +32,6 @@ class car {
 
 const car1 = new car('BMW');
 */
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
 /*
 function BaseEntity(ctr : Function){
     ctr.prototype.id=Math.random();
@@ -55,25 +49,43 @@ let user =new User("dany");
 console.log(user.id);
 
 */
-function logExecutionTime(target, propertyName, descriptor) {
+/*
+function logExecutionTime(target : any ,propertyName: string , descriptor:PropertyDescriptor){
     let originalMethod = descriptor.value;
-    descriptor.value = function (...args) {
-        console.log('Method :' + propertyName + "execution started", args);
-        args[1] = 10;
+    descriptor.value = function(...args: any[]){
+        console.log('Method :'  +propertyName + "execution started" ,args );
+        args[1]=10;
         const result = originalMethod.apply(this, args);
         console.log(`Method ${propertyName} execution ended`);
-        return result;
-    };
-    // return descriptor;
+  return result;
+    }
+   // return descriptor;
 }
-class Calculator {
-    add(a, b) {
+
+class Calculator{
+    @logExecutionTime
+    add(a:number, b:number):number{
         return a + b;
     }
 }
-__decorate([
-    logExecutionTime
-], Calculator.prototype, "add", null);
+
 const calculator = new Calculator();
-let total = calculator.add(2, 3);
+let total = calculator.add(4,3);
+
+
 console.log(total);
+
+*/
+/*
+[11:50] Nagendra (Bridgelabz) (Unverified)
+Class Decorator:
+
+target is the constructor function of the class.
+
+
+
+Method Decorator:
+
+target is the prototype of the class for instance methods or the constructor function for static methods.
+*/
+//                  LOGGER 
