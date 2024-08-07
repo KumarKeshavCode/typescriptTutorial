@@ -1,4 +1,37 @@
 "use strict";
+/*
+
+function Logger(constructor :Function){// Fu ction declare as a class  and f for object
+    console.log(`Logginging constructor`)
+    console.log(constructor);
+    constructor.prototype.created_date=new Date().toString();
+
+}
+@Logger
+class Person{
+    [key : string]: any;
+    public name : string;
+    constructor(public nameval: string){
+        this.name = nameval;
+        console.log("PErson name " + this.name);
+    }
+}
+
+const person = new Person('Kumar KEshav');
+
+console.log(person.created_date);
+
+@Logger
+class car {
+    public name : string;
+    constructor(public nameval: string){
+        this.name = nameval;
+        console.log("Car name " + this.name);
+    }
+}
+
+const car1 = new car('BMW');
+*/
 var __esDecorate = (this && this.__esDecorate) || function (ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
     function accept(f) { if (f !== void 0 && typeof f !== "function") throw new TypeError("Function expected"); return f; }
     var kind = contextIn.kind, key = kind === "getter" ? "get" : kind === "setter" ? "set" : "value";
@@ -37,55 +70,30 @@ var __setFunctionName = (this && this.__setFunctionName) || function (f, name, p
     if (typeof name === "symbol") name = name.description ? "[".concat(name.description, "]") : "";
     return Object.defineProperty(f, "name", { configurable: true, value: prefix ? "".concat(prefix, " ", name) : name });
 };
-function Logger(constructor) {
-    console.log(`Logginging constructor`);
-    console.log(constructor);
-    constructor.prototype.created_date = new Date().toString();
+function BaseEntity(ctr) {
+    ctr.prototype.id = Math.random();
+    ctr.prototype.created = new Date().toString;
 }
-let Person = (() => {
-    let _classDecorators = [Logger];
+let User = (() => {
+    let _classDecorators = [BaseEntity];
     let _classDescriptor;
     let _classExtraInitializers = [];
     let _classThis;
-    var Person = _classThis = class {
-        constructor(nameval) {
-            this.nameval = nameval;
-            this.name = nameval;
-            console.log("PErson name " + this.name);
+    var User = _classThis = class {
+        constructor(name) {
+            this.name = name;
         }
+        ;
     };
-    __setFunctionName(_classThis, "Person");
+    __setFunctionName(_classThis, "User");
     (() => {
         const _metadata = typeof Symbol === "function" && Symbol.metadata ? Object.create(null) : void 0;
         __esDecorate(null, _classDescriptor = { value: _classThis }, _classDecorators, { kind: "class", name: _classThis.name, metadata: _metadata }, null, _classExtraInitializers);
-        Person = _classThis = _classDescriptor.value;
+        User = _classThis = _classDescriptor.value;
         if (_metadata) Object.defineProperty(_classThis, Symbol.metadata, { enumerable: true, configurable: true, writable: true, value: _metadata });
         __runInitializers(_classThis, _classExtraInitializers);
     })();
-    return Person = _classThis;
+    return User = _classThis;
 })();
-const person = new Person('Kumar KEshav');
-console.log(person.created_date);
-let car = (() => {
-    let _classDecorators = [Logger];
-    let _classDescriptor;
-    let _classExtraInitializers = [];
-    let _classThis;
-    var car = _classThis = class {
-        constructor(nameval) {
-            this.nameval = nameval;
-            this.name = nameval;
-            console.log("Car name " + this.name);
-        }
-    };
-    __setFunctionName(_classThis, "car");
-    (() => {
-        const _metadata = typeof Symbol === "function" && Symbol.metadata ? Object.create(null) : void 0;
-        __esDecorate(null, _classDescriptor = { value: _classThis }, _classDecorators, { kind: "class", name: _classThis.name, metadata: _metadata }, null, _classExtraInitializers);
-        car = _classThis = _classDescriptor.value;
-        if (_metadata) Object.defineProperty(_classThis, Symbol.metadata, { enumerable: true, configurable: true, writable: true, value: _metadata });
-        __runInitializers(_classThis, _classExtraInitializers);
-    })();
-    return car = _classThis;
-})();
-const car1 = new car('BMW');
+let user = new User("dany");
+console.log(user.id);

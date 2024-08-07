@@ -1,3 +1,5 @@
+/*
+
 function Logger(constructor :Function){// Fu ction declare as a class  and f for object
     console.log(`Logginging constructor`)
     console.log(constructor);
@@ -28,3 +30,20 @@ class car {
 }
 
 const car1 = new car('BMW');
+*/
+
+function BaseEntity(ctr : Function){
+    ctr.prototype.id=Math.random();
+    ctr.prototype.created = new Date().toString;
+}
+
+@BaseEntity
+class User{
+    [key : string] : any;
+    constructor(public name : string){};
+
+}
+
+let user =new User("dany");
+console.log(user.id);
+
